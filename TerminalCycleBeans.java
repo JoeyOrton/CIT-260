@@ -186,6 +186,14 @@ public class Location implaments java.io.Serializable{
         }
 }
 
+public class Inventory implements java.io.Serializable
+    private Long totalQuantity = 0;
+
+    public InventoryBean(){
+    }
+        public String getItemlist(){
+            return itemList;
+        }
 -------------------------------------------------------------------
 TEMPLATE:
 
