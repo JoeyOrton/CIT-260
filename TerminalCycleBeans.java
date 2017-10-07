@@ -188,11 +188,15 @@ public class Location implaments java.io.Serializable{
 
 public class Inventory implements java.io.Serializable
     private Long totalQuantity = 0;
+    private String itemList
 
     public InventoryBean(){
     }
-        public String getItemlist(){
+        public String getitemList(){
             return itemList;
+        }
+        public String setitemList(){
+            return itemList
         }
 -------------------------------------------------------------------
 TEMPLATE:
