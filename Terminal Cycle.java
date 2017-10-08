@@ -1,6 +1,17 @@
-public class User implaments java.io.Serializable{
+package byui.cit260.terminalCycle.model;
+
+import java.io.Serializable;
+
+public main(){
+    
+}
+
+public class User implements Serializable{
     private String name = Null;
     private String saveGame = Null;
+
+    public User() {
+    }
 
         public UserBean(){
         }
@@ -10,79 +21,79 @@ public class User implaments java.io.Serializable{
             public String getSaveGame(){
                 return saveGame;
             }
-            public void String setName(String name){
+            public void setName(String name){
                 this.name = name;
             }
-            public void String setSaveGame(String saveGame){
+            public void setSaveGame(String saveGame){
                 this.saveGame = saveGame;
             }
 }
 
-public class Game implaments java.io.Serializable{
-    private String characterSaveData=Null;
+public class Game implements Serializable{
+    private String characterSaveData = Null;
 
     public GameBean(){
     }
         public String getCharacterSaveData(){
             return characterSaveData;
         }
-        public void String setCharacterSaveData(String characterSaveData){
-            this.characterSaveData=characterSaveData;
+        public void setCharacterSaveData(String characterSaveData){
+            this.characterSaveData = characterSaveData;
         }
 }
 
-public class Character implaments java.io.Serializable{
+public class CharacterBean implements Serializable{
     private String name = Null;
     private String characterType = Null;
-    private Long health = 0;
-    private Long attack = 0;
-    private Long defence = 0;
-    private Long combatModifier = 0;
+    private int health = 0;
+    private int attack = 0;
+    private int defence = 0;
+    private int combatModifier = 0;
 
-    public CharacterBean(){
-    }
+    public CharacterBean(){}
+
         public String getName(){
             return name;
         }
         public String getCharacterType(){
             return characterType;
         }
-        public Long getHealth(){
+        public int getHealth(){
             return health;
         }
-        public Long getAttack(){
+        public int getAttack(){
             return attack;
         }
-        public Long getDefence(){
+        public int getDefence(){
             return defence;
         }
-        public Long getCombatModifier(){
+        public int getCombatModifier(){
             return combatModifier;
         }
-        public void String setName(String name){
+        public void setName(String name){
             this.name = name;
         }
-        public void String setCharacterType(String characterType){
+        public void setCharacterType(String characterType){
             this.characterType = characterType;
         }
-        public void Long setHealth(Long health){
+        public void setHealth(int health){
             this.health = health;
         }
-        public void Long setAttack(Long attack){
+        public void setAttack(int attack){
             this.attack = attack;
         }
-        public void Long setDefence(Long defence){
+        public void setDefence(int defence){
             this.defence = defence;
         }
-        public void Long setCombatModifier(Long combatModifier){
+        public void setCombatModifier(int combatModifier){
             this.combatModifier = combatModifier;
         }
 }
 
-public class Items implaments java.io.Serializable{
+public class Items implements Serializable{
     private String itemName = Null;
     private String itemType = Null;
-    private Long quantity = 0;
+    private int quantity = 0;
 
     public ItemsBean(){
     }
@@ -92,21 +103,21 @@ public class Items implaments java.io.Serializable{
         public String getItemType(){
             return name;
         }
-        public Long getQuantity(){
+        public int getQuantity(){
             return name;
         }
-        public void String setItemName(String itemName){
+        public void setItemName(String itemName){
             this.itemName = itemName;
         }
-        public void String setItemType(String itemType){
+        public void setItemType(String itemType){
             this.itemType = itemType;
         }
-        public void Long setQuantity(Long quantity){
+        public void setQuantity(int quantity){
             this.quantity = quantity;
         }
 }
 
-public class Scene implaments java.io.Serializable{
+public class Scene implements Serializable{
     private String description = Null;
     private String symbol = Null;
     private Bool isBlocked = Null;
@@ -122,38 +133,39 @@ public class Scene implaments java.io.Serializable{
         public Bool getIsBlocked(){
             return isBlocked;
         }
-        public void String setDescription(String description){
+        public void setDescription(String description){
             this.description = description;
         }
-        public void String setSymbol(String symbol){
+        public void setSymbol(String symbol){
             this.symbol = symbol;
         }
-        public void Bool setIsBlocked(Bool isBlocked){
+        public void setIsBlocked(Bool isBlocked){
             this.isBlocked = isBlocked;
         }
 }
 
-public class Questions implaments java.io.Serializable{
+public class Questions implements Serializable{
     private String question = Null;
     private String answer = Null;
 
     public QuestionsBean(){
     }
+
         public String getQuestion(){
             return question;
         }
         public String getAnswer(){
             return answer;
         }
-        public void String setQuestion(String question){
+        public void setQuestion(String question){
             this.question = question;
         }
-        public void String setAnswer(String answer){
+        public void setAnswer(String answer){
             this.answer = answer;
         }
 }
 
-public class Map implaments java.io.Serializable{
+public class Map implements Serializable{
     private String description = Null;
 
     public MapBean(){
@@ -161,47 +173,37 @@ public class Map implaments java.io.Serializable{
         public String getDescription(){
             return description;
         }
-        public void String setDescription(String description){
+        public void setDescription(String description){
             this.description = description;
         }
 }
 
-public class Location implaments java.io.Serializable{
-    private Long branchID = 0;
-    private Long roomID = 0;
+public class Location implements Serializable{
+    private int branchID = 0;
+    private int roomID = 0;
 
     public LocationBean(){
     }
-        public Long getBranchID(){
+        public int getBranchID(){
             return branchID;
         }
-        public Long getRoomID(){
+        public int getRoomID(){
             return roomID;
         }
-        public void Long setBranchID(Long branchID){
+        public void setBranchID(int branchID){
             this.branchID = branchID;
         }
-        public void Long setRoomID(Long roomID){
+        public void setRoomID(int roomID){
             this.roomID = roomID;
         }
 }
 
-public class Inventory implements java.io.Serializable
-    private Long totalQuantity = 0;
-    private String itemList
-
-    public InventoryBean(){
-    }
-        public String getitemList(){
-            return itemList;
-        }
-        public String setitemList(){
-            return itemList
-        }
+/**
 -------------------------------------------------------------------
+
 TEMPLATE:
 
-public class Name implaments java.io.Serializable{
+public class Name implements Serializable{
     private Type name = Null;
 
     public ClassBean(){
@@ -213,3 +215,4 @@ public class Name implaments java.io.Serializable{
             this.name = name;
         }
 }
+*/
