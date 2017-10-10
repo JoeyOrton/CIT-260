@@ -3,15 +3,17 @@ package byui.cit260.terminalCycle.model;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class main(){
+public class TerminalCycle {
     
-}
+    public int main(String[] args){
+    
+    }
 
 public class User implements Serializable{
     private String name = "Null";
     private String saveGame = "Null";
 
-        public void UserBean(){
+        public void User(){
         }
             public String getName(){
                 return name;
@@ -64,7 +66,7 @@ public class User implements Serializable{
 public class Game implements Serializable{
     private String characterSaveData = "Null";
 
-    public void GameBean(){
+    public void Game(){
     }
         public String getCharacterSaveData(){
             return characterSaveData;
@@ -112,7 +114,7 @@ public class Character implements Serializable{
     private int defence = 0;
     private int combatModifier = 0;
 
-    public void CharacterBean(){}
+    public void Character(){}
 
         public String getName(){
             return name;
@@ -207,7 +209,7 @@ public class Items implements Serializable{
     private String itemType = "Null";
     private int quantity = 0;
 
-    public void ItemsBean(){
+    public void Items(){
     }
         public String getItemName(){
             return name;
@@ -272,7 +274,7 @@ public class Scene implements Serializable{
     private String symbol = "Null";
     private String isBlocked = "Null";
 
-    public void SceneBean(){
+    public void Scene(){
     }
         public String getDescription(){
             return description;
@@ -336,7 +338,7 @@ public class Questions implements Serializable{
     private String question = "Null";
     private String answer = "Null";
 
-    public void QuestionsBean(){
+    public void Questions(){
     }
 
         public String getQuestion(){
@@ -390,7 +392,7 @@ public class Questions implements Serializable{
 public class Map implements Serializable{
     private String description = "Null";
 
-    public void MapBean(){
+    public void Map(){
     }
         public String getDescription(){
             return description;
@@ -434,7 +436,7 @@ public class Location implements Serializable{
     private int branchID = 0;
     private int roomID = 0;
 
-    public void LocationBean(){
+    public void Location(){
     }
         public int getBranchID(){
             return branchID;
@@ -483,7 +485,7 @@ public class Location implements Serializable{
         return true;
     }
 }
-
+}
 /**
 -------------------------------------------------------------------
 
@@ -492,7 +494,7 @@ TEMPLATE:
 public class Name implements Serializable{
     private Type name = "Null";
 
-    public ClassBean(){
+    public Class(){
     }
         public Type getName(){
             return name;
