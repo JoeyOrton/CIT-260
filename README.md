@@ -56,24 +56,26 @@ CYCLE
   Start menu:
 Appears after splash screen and runs until the user makes a choice. Looks like this:
 
+Start menu:
 |----------------------------------------------------------|
-|   N - New game			                                     |
-|   L - Load saved game			                               |
-|   O - Options					                                   |
-|   H - How to play				                                 |
-|   E - Exit 					                                     |
+|   Continue:              			           |
+|   N - New Game		 		           |
+|   L - Load Saved Game		           		   |
+|   O - Options		           			   |
+|   H - How to Play		           		   |
+|   E - Exit                                  		   |
 |----------------------------------------------------------|
 >
 Once the user chooses an option this will disappear to be replaced by the option they choose. If they enter an incorrect option the menu
 will simply refresh.
 
-  Load saved game menu:
+Load saved game menu:
 |----------------------------------------------------------|
-|   Continue:              			                           |
-|   1 - (name of character) save file 1		                 |
-|   2 - (name of character) save file 2		                 |
-|   3 - (name of character) save file 3		                 |
-|   4 - (name of character) save file 4		                 |
+|   Continue:              			           |
+|   1 - (name of character) save file 1		           |
+|   2 - (name of character) save file 2		           |
+|   3 - (name of character) save file 3		           |
+|   4 - (name of character) save file 4		           |
 | ESC - back to main menu                                  |
 |----------------------------------------------------------|
 >
@@ -86,32 +88,32 @@ If they enter an incorrect option the menu will simply refresh.
 This will open when the user chooses H from the start menu. It will tell the player how to play the game. It will not include the story,
 that will appear after the user chooses a character at the beginning of a new game.
 
-
-|------------------------------------------------------------------------|
-|   			How to play			                                               |
-|		This is a text based RPG game.	                                     |
-| A menu and description will appear whenever	                           |
-| there is a choice to make. To choose an option	                       |
-| type the corresponding letter and hit enter.		                       |
-| Some menus will ask for something different,	                         |
-| such as a name. Simply enter your response 	                           |
-| and hit enter.						                                             |
--------------------------------------------------------------------------|
-| Throughout this game you will fight monsters,	                         |
-| collect items, navigate traps, and explore the tunnels.                |
-| To win you must kill the final boss. 			                             |
-| Don’t worry if you don’t win on your first try!	                       |
-| The game is built for multiple tries. Each time you die,               |
-| you will be able to restart with your character and                    |
-| explore more of the cave.				                                       |
-|							                                                           |
-| Each new life is a new adventure!			                                 |
-|------------------------------------------------------------------------|
-| C - Combat help					                                               |
-| B - Main menu 					                                               |
-| I - Inventory help					                                           |
-| Esc - Back to Start menu				                                       |
-|------------------------------------------------------------------------|
+How to Play
+|--------------------------------------------------------|
+|   			How to play			 |
+|		This is a text based RPG game.	         |
+| A menu and description will appear whenever	         |
+| there is a choice to make. To choose an option	 |
+| type the corresponding letter and hit enter.		 |
+| Some menus will ask for something different,	         |
+| such as a name. Simply enter your response 	         |
+| and hit enter.					 |
+---------------------------------------------------------|
+| Throughout this game you will fight monsters,	         |
+|collect items, navigate traps, and explore the tunnels. |
+| To win you must kill the final boss. 			 |
+| Don’t worry if you don’t win on your first try!	 |
+| The game is built for multiple tries. Each time you die|
+| you will be able to restart with your character and    |
+| explore more of the cave.				 |
+|							 |
+| Each new life is a new adventure!			 |
+|--------------------------------------------------------|
+| C - Combat help					 |
+| B - Main menu 					 |
+| I - Inventory help					 |
+| Esc - Back to Start menu				 |
+|--------------------------------------------------------|
 >
 When the user enters an invalid response, the menu will just refresh.
 
@@ -119,36 +121,41 @@ When the user enters an invalid response, the menu will just refresh.
 Appears when chosen either in-game or from the main menu. Players will be able to toggle on or off the music, change how many steps they
 take per move, and exit to the main menu. If an invalid option is selected, the menu will simply refresh until a valid option is chosen.
 
-|----------------------------------------------------------|
-|   		Options			                                       |
-|  M - Toggle music (On/Off) 			                         |
-|  X - Toggle commands list on/off		                     |
-|  E - Exit 					                                     |
-|----------------------------------------------------------|
+Options menu
+|--------------------------------------------------------|
+|   		Options			                 |
+|  M - Toggle music (On/Off) 			         |
+|  X - Toggle commands list on/off		         |
+|  E - Exit 					         |
+|--------------------------------------------------------|
 >
 if command list is toggled off, letter commands and descriptions will not be displayed in the default game menu.
 
   Character Selection/New Game:
 Appears when players choose to start a new game. They are given the benefits of each character and then choose their character and name.
 Once complete the game will begin.
+
+Character Selection
 |----------------------------------------------------------|
-|   	Choose your warrior		                               |
-|  S - Swordsman 				                                   |
-|	Built for offence, and equipped with a sword, this choice|
+|   	Choose your warrior		                   |
+|  S - Swordsman 				           |
+|Built for offence, and equipped with a sword, this choice |
 | focuses on attack.                                       |
-|	Attack: +10 Defence: 0		                               |
-|  B - Shield bearer				                               |
-|	The shield you wield is well suited to both protection   |
+|Attack: +10 Defence: 0		                           |
+|  B - Shield bearer				           |
+|The shield you wield is well suited to both protection    |
 | and smashing                                             |
-|	Attack: 0 Defence: +10		                               |
-|  D - Dual Daggers				                                 |
-|	With these two blades you are ready to defend yourself as|
+|Attack: 0 Defence: +10		                           |
+|  D - Dual Daggers				           |
+|With these two blades you are ready to defend yourself as |
 | well as attack                                           |
-|	Attack: +5 Defence +5		                                 |
+|Attack: +5 Defence +5		                           |
 |----------------------------------------------------------|
 >
+
+Character Naming
 |----------------------------------------------------------|
-|   Type your character name below	                       |
+|   Type your character name below	                   |
 |----------------------------------------------------------|
 >
 
@@ -163,24 +170,28 @@ Ascii art environment, beneath that, a description of their location and lastly,
 stats, inventory, map and examine surroundings. When an event is triggered, a new menu corresponding to that event will appear. Ie: If
 you are attacked the combat menu will appear.
 
+Sample Scene Description
 |-------------------------------------------------------------------|
-|The forest of Sages					                                      |
-|									                                                  |
-| A gentle breeze flows from the forest. The tall evergreens invite	|
-| you to enter. The air smells fresh and clean. You can hear birds	|
+|The forest of Sages					            |
+|								    |
+| A gentle breeze flows from the forest. The tall evergreens invite |
+| you to enter. The air smells fresh and clean. You can hear birds  |
 | singing in the higher branches. The leaf covered path continues.  |
 |-------------------------------------------------------------------|
-| F - Move forward			        | S - Player stats		              |	
-| E - Examine surroundings	  	| I - Inventory			                |
-| M - Open map			            | O - Options			                  |
+| F - Move forward			| S - Player stats  	    |	
+| E - Examine surroundings	  	| I - Inventory		    |
+| M - Open map			        | O - Options		    |
 |-------------------------------------------------------------------|
 
   Check player inventory:
 This will be a list sorted alphabetically by each item name.
-|	Inventory      			                 |
-| 	Jeweled Shield	+25 Defense        |
-|	Large Sword		+25 Attack             |
-|	Potion			+25 Health	             |
+
+Inventory Screen
+|--------------------------------------|
+|	Inventory      		       |
+| 	Jeweled Shield	+25 Defense    |
+|	Large Sword	+25 Attack     |
+|	Potion		+25 Health     |
 |--------------------------------------|
 >
 This is a sorted list
