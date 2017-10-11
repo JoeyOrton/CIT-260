@@ -1,3 +1,6 @@
+import java.io.Serializable;
+import java.util.Objects;
+
 public class Game implements Serializable{
     private String characterSaveData = "Null";
 
