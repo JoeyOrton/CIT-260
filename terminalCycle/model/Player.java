@@ -1,16 +1,17 @@
+package CIT-260.terminalCycle.model;
 
 import java.io.Serializable;
 import java.util.Objects;
 
-public class Character implements Serializable{
+public class Player implements Serializable{
     private String name = "Null";
     private String characterType = "Null";
-    private int health = 0;
-    private int attack = 0;
-    private int defence = 0;
-    private int combatModifier = 0;
+    private int health = 50;
+    private int attack = 10;
+    private int defence = 10;
+    private int combatModifier = 2;
 
-    public void Character(){}
+    public void Player(){}
 
         public String getName(){
             return name;
@@ -63,7 +64,7 @@ public class Character implements Serializable{
 
     @Override
     public String toString() {
-        return "Character{" + "name=" + name + ", characterType=" + characterType + ", health=" + health + ", attack=" + attack + ", defence=" + defence + ", combatModifier=" + combatModifier + '}';
+        return "Player{" + "name=" + name + ", characterType=" + characterType + ", health=" + health + ", attack=" + attack + ", defence=" + defence + ", combatModifier=" + combatModifier + '}';
     }
 
     @Override
@@ -77,7 +78,7 @@ public class Character implements Serializable{
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Character other = (Character) obj;
+        final Player other = (Player) obj;
         if (this.health != other.health) {
             return false;
         }
