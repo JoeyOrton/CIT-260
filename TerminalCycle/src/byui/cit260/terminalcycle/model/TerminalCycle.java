@@ -3,8 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package terminalcycle;
-
+package byui.cit260.terminalcycle.model;
 /**
  *
  * @author Josep
@@ -16,6 +15,7 @@ public class TerminalCycle {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        StartProgramView object = new StartProgramView();
+        StartProgramView();
     }
-    
 }
