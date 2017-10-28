@@ -15,12 +15,7 @@ public class GameControl {
             return null;
         }
         Player object = new player();
-    }
-
-    private static class player extends Player {
-
-        public player() {
-            name = player
-        }
+        StartProgramView.setPlayer(player);
+        return null;
     }
 }

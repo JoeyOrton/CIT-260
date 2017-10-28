@@ -9,7 +9,11 @@ package byui.cit260.terminalcycle.model;
  * @author Josep
  */
 public class TerminalCycle {
-
+    
+        private static Game currentGame = null;
+        private static Player player = null;
+        
+     
     /**
      * @param args the command line arguments
      */
@@ -17,5 +21,23 @@ public class TerminalCycle {
         // TODO code application logic here
         StartProgramView object = new StartProgramView();
         StartProgramView();
+        TerminalCycle.setPlayer(player);
+
+    /**
+     *
+     * @return
+     */
+    public static Game getCurrentGame() {
+            return curretGame;
+}
+    public static void setCurrentGame(Game currentGame) {
+        TerminalCycle.currentGame = currentGame;
+    }
+    public static Player getPlayer() {
+        return player;
+    }
+    pubic static void setPlayer(Player player) {
+        TerminalCycle.player = player;
+    }
     }
 }
