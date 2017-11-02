@@ -51,6 +51,7 @@ class MainMenuView {
            case "N": startNewGame();
            case "R": restartGame();
            case "H": getHelp();
+           case "O": optionsMenu();
            case "E": return true;
            default: System.out.println("Invalid choice");
        }
@@ -60,6 +61,32 @@ class MainMenuView {
         public static void createNewGame(Player player);
         gameMenuView = new Object GameMenuView;
         gameMenuView.displayGameMenuView();
+    boolean soundVolume;
+    private boolean optionsMenu() {
+        boolean i = false;
+        do {
+            System.out.flush();
+        System.out.println("-----Options-----");
+        System.out.println("S   Toggle Sound");
+        System.out.println("H   How to play");
+        System.out.println("E   Exit to Main Menu");
+        Scanner keyboard = new Scanner(System.in);
+        String choice = keyboard.nextLine();
+        String upChoice = choice.toUpperCase();
+        String userChoice = upChoice.trim();
+        
+        switch (userChoice) {
+            case "S": soundVolume = false;
+            i = true;
+            case "H": gameInstructions();
+            i = true;
+            case "E": return true;
+            default: System.out.println("Invalid choice");
+            
+        }
+        } while i = false;
+    }
+}
     }
 
     private void restartGame() {
@@ -68,8 +95,7 @@ class MainMenuView {
     }
 
     private void getHelp() {
-        helpMenuView = new HelpMenuView;
-        helpMenuView.displayHelpMenuView;
+        
     }
     display() {
         do {
