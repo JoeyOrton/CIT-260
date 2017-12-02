@@ -1,3 +1,5 @@
+package modelLayer;
+
 import java.io.Serializable;
 import java.util.Objects;
 

@@ -1,4 +1,4 @@
-package byui.cit260.terminalCycle.model;
+package modelLayer;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -6,10 +6,10 @@ import java.util.Objects;
 public class Actor implements Serializable{
     private String name = "Null";
     private String characterType = "Null";
-    private int health = 0;
-    private int attack = 0;
-    private int defence = 0;
-    private int combatModifier = 0;
+    public int playerHealth = 100;
+    public int playerPower = 10;
+    private int defence = 10;
+    private int combatModifier = 1;
 
     public void Character(){}
 
@@ -20,10 +20,10 @@ public class Actor implements Serializable{
             return characterType;
         }
         public int getHealth(){
-            return health;
+            return playerHealth;
         }
         public int getAttack(){
-            return attack;
+            return playerPower;
         }
         public int getDefence(){
             return defence;
@@ -38,10 +38,10 @@ public class Actor implements Serializable{
             this.characterType = characterType;
         }
         public void setHealth(int health){
-            this.health = health;
+            this.playerHealth = health;
         }
         public void setAttack(int attack){
-            this.attack = attack;
+            this.playerPower = attack;
         }
         public void setDefence(int defence){
             this.defence = defence;
@@ -55,8 +55,8 @@ public class Actor implements Serializable{
         int hash = 7;
         hash = 43 * hash + Objects.hashCode(this.name);
         hash = 43 * hash + Objects.hashCode(this.characterType);
-        hash = 43 * hash + this.health;
-        hash = 43 * hash + this.attack;
+        hash = 43 * hash + this.playerHealth;
+        hash = 43 * hash + this.playerPower;
         hash = 43 * hash + this.defence;
         hash = 43 * hash + this.combatModifier;
         return hash;
@@ -64,7 +64,7 @@ public class Actor implements Serializable{
 
     @Override
     public String toString() {
-        return "Character{" + "name=" + name + ", characterType=" + characterType + ", health=" + health + ", attack=" + attack + ", defence=" + defence + ", combatModifier=" + combatModifier + '}';
+        return "Character{" + "name=" + name + ", characterType=" + characterType + ", health=" + playerHealth + ", attack=" + playerPower + ", defence=" + defence + ", combatModifier=" + combatModifier + '}';
     }
 
     @Override
@@ -79,10 +79,10 @@ public class Actor implements Serializable{
             return false;
         }
         final Actor other = (Actor) obj;
-        if (this.health != other.health) {
+        if (this.playerHealth != other.playerHealth) {
             return false;
         }
-        if (this.attack != other.attack) {
+        if (this.playerPower != other.playerPower) {
             return false;
         }
         if (this.defence != other.defence) {

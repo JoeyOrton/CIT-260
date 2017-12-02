@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package byui.cit260.terminalcycle.model;
+package viewLayer;
 
 /**
  *
  * @author Colby
  */
-class gameMenuView {
+public class storeView {
     
 }

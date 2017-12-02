@@ -4,8 +4,11 @@
  * and open the template in the editor.
  */
 
-package byui.cit260.terminalcycle.model;
+package viewLayer;
+import modelLayer.Player;
+
 import java.util.Scanner;
+import static sun.audio.AudioPlayer.player;
 
 
 /**
@@ -13,54 +16,38 @@ import java.util.Scanner;
  * @author Colby
  */
 class MainMenuView {
+
+    MainMenuView() {
+    }
     public void displayMainMenuView() {
+        viewLayer.gameMenuView Candy = new viewLayer.gameMenuView();
         boolean endView = false;
         do{
-            Object inputs[] = (Object[]) getInputs();
-            if (inputs == null || inputs[0] == "Q") {
-                return;
-            endView = doActions(inputs);
-            }while (endView != true) {
-            }
-    private Object getInputs() {
-       String inputs[] = new String[1];
-         System.out.println("You have engaged Terminal Cycle");
-         System.out.println("---Welcome---");
-         
-         boolean valid = false;
-         while(valid == false) {
-             Scanner keyboard = new Scanner(System.in);
-             System.out.println("Enter the players name:");
-             String aName = keyboard.nextLine();
-             String playerName = aName.trim();
-             int nameLength = playerName.length();
-             if (nameLength > 2) {
-                 System.out.println("You must enter a valid name");
-             }else {
-                 valid = true;
-             }
-             return inputs;
-        }
-    }
+//            Object inputs[] = (Object[]) getInputs();
+//            if (inputs == null || inputs[0] == "Q") {
+//                return;
+//            }endView = doActions(inputs);
+//            }while (endView != true) {
+//            }
+    
 
-    private boolean doActions(Object[] inputs) {
+    public doAction(Object[] inputs) {
        Object menuItem = inputs[0];
        String menuCaps = menuItem.toUpperCase();
        
        switch (menuCaps) {
-           case "N": startNewGame();
-           case "R": restartGame();
-           case "H": getHelp();
-           case "O": optionsMenu();
+           case "N": this.startNewGame();
+           case "R": this.restartGame();
+           case "H": this.getHelp();
+           case "O": this.optionsMenu();
            case "E": return true;
            default: System.out.println("Invalid choice");
        }
+        return false;
     }
 
     private void startNewGame() {
-        public static void createNewGame(Player player);
-        gameMenuView = new Object GameMenuView;
-        gameMenuView.displayGameMenuView();
+        createNewGame(Player player);
     boolean soundVolume;
     private boolean optionsMenu() {
         boolean i = false;
@@ -84,11 +71,25 @@ class MainMenuView {
             default: System.out.println("Invalid choice");
             
         }
-        } while i = false;
-    }
-}
+        } while( i = false);
+        return false;
     }
 
+    private void restartGame() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void getHelp() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void gameInstructions() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+}
+}
+}
+}
     private void restartGame() {
         startExistingGameView = new StartExistingGameView;
         startExistingGameView.displayStartExistingGameView();
@@ -97,12 +98,5 @@ class MainMenuView {
     private void getHelp() {
         
     }
-    display() {
-        do {
-        inputs = getInputs();
-        doAction(inputs);
-        displayResults();
-        while ();
-}
-}
+
 }

@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package byui.cit260.terminalcycle.model;
+package viewLayer;
+import controlLayer.GameControl;
+import modelLayer.Player;
 import java.io.*;
 import java.util.*;
 import java.util.Scanner;
@@ -12,7 +14,7 @@ import java.util.Scanner;
  *
  * @author Colby
  */
-public class StartProgramView {
+class StartProgramView {
 
     public void displayStartProgramView() {
         boolean endView = false;
@@ -37,7 +39,7 @@ public class StartProgramView {
                    + "========================================";
            System.out.print("line");
            MainMenuView object = new MainMenuView();
-           MainMenuView.displayMainMenuView();
+           object.displayMainMenuView();
            }
            return true;
         }

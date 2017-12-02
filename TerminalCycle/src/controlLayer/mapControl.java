@@ -3,15 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package byui.cit260.terminalcycle.model;
+package controlLayer;
 
 /**
  *
  * @author Colby
+ * 
+ * 
+ * Exploration % or fraction
+ * Increase/Decrease exploreRate
  */
-public class Player {
-
-    public Player() {
-    }
+public class mapControl {
     
 }

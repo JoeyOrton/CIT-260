@@ -1,3 +1,5 @@
+package modelLayer;
+
 //menus go here
 import java.io.Serializable;
 import java.util.Objects;
@@ -38,9 +40,6 @@ public class Game implements Serializable{
             return false;
         }
         final Game other = (Game) obj;
-        if (!Objects.equals(this.characterSaveData, other.characterSaveData)) {
-            return false;
-        }
-        return true;
+        return Objects.equals(this.characterSaveData, other.characterSaveData);
     }
 }

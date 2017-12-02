@@ -3,15 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package byui.cit260.terminalcycle.model;
 
+package controlLayer;
 import java.util.Scanner;
-
 /**
  *
  * @author Colby
  */
-public class Attack {
+public class combatControl {
     public void playerAttack() {
         System.out.println("You have entered conflict!");
         System.out.println("How do you wish to proceed?");
@@ -22,17 +21,27 @@ public class Attack {
         String upChoice = choice.toUpperCase();
         String userChoice = upChoice.trim();
         
-        if (userChoice == "A") {
+        modelLayer.Monster Butter = new modelLayer.Monster();
+        int monsterPower = Butter.monsterPower;
+        boolean monsterLife = Butter.monsterLife;
+        
+        modelLayer.Actor Cake = new modelLayer.Actor();
+        int playerPower = Cake.playerPower;
+        int playerHealth = Cake.playerHealth;
+        if ("A".equals(userChoice)) {
             if (playerPower > monsterPower) {
-                monsterPower == 0;
+                monsterLife = false;
             } else {
                 playerHealth = playerHealth -1;
-                while (playerHealth > 0) {
+                if (playerHealth > 0) {
                     playerAttack();
+                } else {
+                    //Player dies here. Make it happen.
                 }
             }
-        } if (userChoice == "F") {
-            return true;
+        } if ("F".equals(userChoice)) {
+            System.out.println("You flee!");
+            //Add retrun to room here!
         } else {
             System.out.println("Please pick a valid option");
             playerAttack();
