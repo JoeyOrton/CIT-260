@@ -24,18 +24,20 @@ import modelLayer.Game;
 
 public class GameControl {
     public static Player savePlayer(String name) {
-        if (name == null || name.length() > 1) {
+        if (name == null || name.length() < 1) {
             return null;
         }
         Player object = new Player();
-        StartProgramView.setPlayer();
-        return null;
+        
+        object.setplayerName(name);
+//StartProgramView.setPlayer(name);
+        return object;
     }
 
     private static class StartProgramView {
 
-        private static void setPlayer() {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        private static void setPlayer(String name) {
+            
         }
 
         public StartProgramView() {

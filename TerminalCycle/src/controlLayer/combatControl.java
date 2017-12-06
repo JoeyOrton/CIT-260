@@ -37,6 +37,7 @@ public class combatControl {
                     playerAttack();
                 } else {
                     //Player dies here. Make it happen.
+                    //Take em to exit or death function.
                 }
             }
         } if ("F".equals(userChoice)) {

@@ -3,9 +3,11 @@ package modelLayer;
 //menus go here
 import java.io.Serializable;
 import java.util.Objects;
+import modelLayer.Actor;
 
 public class Game implements Serializable{
     private String characterSaveData = "Null";
+    private Actor nActor;
 
     public void Game(){
     }
@@ -16,6 +18,15 @@ public class Game implements Serializable{
             this.characterSaveData = characterSaveData;
         }
 
+    public void setActor(Actor curActor){
+        nActor = curActor; 
+    }
+    public Actor getActor(){
+        return nActor;
+    }
+        
+        
+        
     @Override
     public int hashCode() {
         int hash = 3;
