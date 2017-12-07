@@ -9,6 +9,15 @@ import modelLayer.Player;
 import modelLayer.Actor; 
 import java.util.Scanner;
 import modelLayer.Game;
+import modelLayer.mainSceneTraffic;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -24,8 +33,8 @@ class MainMenuView {
         System.out.println("-----Main Menu-----");
         System.out.println("(Enter the letter corisponding to your choice)");
         System.out.println("");
-        System.out.println("(N-) - New Game");
-        System.out.println("(C*) - Continue Game");
+        System.out.println("(N) - New Game");
+        System.out.println("(C*) - Continue Saved Game");
         System.out.println("(H) - How to play");
         System.out.println("(O-) - Options");
         System.out.println("(E) - Exit Game");
@@ -47,14 +56,24 @@ class MainMenuView {
         Scanner keyboard = new Scanner(System.in);
         choice = keyboard.nextLine();
         choice = choice.toUpperCase();
-       
+       Game curGame = null;
        switch (choice) {
-           case "N": this.checkforPlayer();
-           case "C": this.checkforPlayer();
+           case "N": curGame = this.startNewGame();
+           case "C": {
+            try {
+                curGame = this.continueGame();
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
            case "H": this.gameInstructions();
            case "O": this.optionsMenu();
            case "E": return;
            default: System.out.println("Invalid choice");
+           
+           mainSceneTraffic.sceneTraffic(curGame);
        }
     }
     String howToPlay = "This game is entirely text-based. Simalar to a \"choose-your-own-adventure\" book, you will be presented with a situation\nas well as several choices. Simply type the letter corisponding with what you choose.\nGood luck!";
@@ -73,17 +92,8 @@ class MainMenuView {
             default: System.out.println("Invalid choice");
             
         }
-    }
+    }    
     
-    private void checkforPlayer(){
-        
-        //startNewGame()
-        //continueGame()
-    }
-    
-    private void continueGame() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     private void gameInstructions() {
         System.out.println(howToPlay);
         displayMainMenuView();
@@ -92,7 +102,6 @@ class MainMenuView {
     private static Game startNewGame() {
         Game aGame = new Game();
         Actor anActor = new Actor();
-        //Make new game here
         System.out.println("----New Game Created-----\n");
         System.out.println("Choose your warrior:");
         System.out.println("(S) - Swordsman\nBuilt for offence and equipped with a mighty sword, this choice focuses on attack.\n---Attack: +10 Defence: +0---");
@@ -114,8 +123,54 @@ class MainMenuView {
         anActor.setName(name);
         aGame.setActor(anActor);
             
+        gameSave(aGame);
+        
         return aGame;
         }
+    }
+    public static void gameSave(Game aGame) {
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Enter a title for this save file:");
+        String gameName = keyboard.nextLine();
+        System.out.println("-----Saving Game-----");
+        //save file with user entered name
+        FileOutputStream fos = null;
+        try {
+            fos = new FileOutputStream(gameName);
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        ObjectOutputStream oos;
+        try {
+            oos = new ObjectOutputStream(fos);
+            oos.writeObject(aGame);
+            oos.close();
+        } catch (IOException ex) {
+            Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+	System.out.println("------Game Saved------");
+    }
+    private Game continueGame() throws ClassNotFoundException, IOException {
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Enter your games save name:");
+        String gameName = keyboard.nextLine();
+        // read object from file
+        FileInputStream fis = null;
+        try {
+            fis = new FileInputStream(gameName);
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        ObjectInputStream ois = null;
+        Game thisGame = null; 
+        try {
+            ois = new ObjectInputStream(fis);
+           thisGame = (Game) ois.readObject();
+        } catch (IOException ex) {
+            Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+	ois.close();
+        return thisGame;
     }
 }
 

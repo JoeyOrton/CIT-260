@@ -49,7 +49,7 @@ public class StartProgramView {
 
        
 
-    private static String getInputs() {
+    public static String getInputs() {
          String input = new String();
          System.out.println("___________                  .__              .__  _________              .__          \n" +
 "\\__    ___/__________  _____ |__| ____ _____  |  | \\_   ___ \\___.__. ____ |  |   ____  \n" +
