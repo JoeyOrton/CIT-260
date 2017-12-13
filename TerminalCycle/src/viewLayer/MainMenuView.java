@@ -9,7 +9,7 @@ import modelLayer.Player;
 import modelLayer.Actor; 
 import java.util.Scanner;
 import modelLayer.Game;
-import modelLayer.mainSceneTraffic;
+import controlLayer.MapControl;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -34,7 +34,7 @@ class MainMenuView {
         System.out.println("(Enter the letter corisponding to your choice)");
         System.out.println("");
         System.out.println("(N) - New Game");
-        System.out.println("(C*) - Continue Saved Game");
+        System.out.println("(C) - Continue Saved Game");
         System.out.println("(H) - How to play");
         System.out.println("(O-) - Options");
         System.out.println("(E) - Exit Game");
@@ -59,6 +59,8 @@ class MainMenuView {
        Game curGame = null;
        switch (choice) {
            case "N": curGame = this.startNewGame();
+           MapControl.sceneTraffic(curGame);
+           break;
            case "C": {
             try {
                 curGame = this.continueGame();
@@ -67,13 +69,13 @@ class MainMenuView {
             } catch (IOException ex) {
                 Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
             }
+            MapControl.sceneTraffic(curGame);
+            break;
         }
            case "H": this.gameInstructions();
            case "O": this.optionsMenu();
            case "E": return;
            default: System.out.println("Invalid choice");
-           
-           mainSceneTraffic.sceneTraffic(curGame);
        }
     }
     String howToPlay = "This game is entirely text-based. Simalar to a \"choose-your-own-adventure\" book, you will be presented with a situation\nas well as several choices. Simply type the letter corisponding with what you choose.\nGood luck!";
@@ -116,7 +118,7 @@ class MainMenuView {
             case "S": anActor.setCharacterType("sword");
             case "B": anActor.setCharacterType("shield");
             case "D": anActor.setCharacterType("dagger");
-            default: System.out.println("Invalid choice");
+            default: System.out.println("--Character Type Set--");
         
         System.out.println("Enter your characters name:");
         String name = keyboard.nextLine();
@@ -124,7 +126,7 @@ class MainMenuView {
         aGame.setActor(anActor);
             
         gameSave(aGame);
-        
+        System.out.println(aGame);
         return aGame;
         }
     }

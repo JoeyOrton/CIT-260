@@ -5,14 +5,23 @@
  */
 package controlLayer;
 
+import modelLayer.Game;
+import modelLayer.Map;
+
 /**
  *
  * @author Colby
- * 
- * 
- * Exploration % or fraction
- * Increase/Decrease exploreRate
  */
-public class mapControl {
-    
+public class MapControl {
+    public static void sceneTraffic(Game curGame) {
+        Map thisMap = new Map();
+        System.out.println("You're in MapContol!");
+        System.out.println("Your current game is: " + curGame);
+        System.out.println("the Map object look like this: " + thisMap);
+        curGame.setMap(thisMap);
+        
+        System.out.println(thisMap.getLocation());
+        System.out.println("------da------");
+        
+    }
 }

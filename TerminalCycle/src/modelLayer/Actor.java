@@ -12,6 +12,8 @@ public class Actor implements Serializable{
     private int combatModifier = 1;
     int goldAmmt;
     int plLevel;
+    int x = 0;
+    int y = 0;
 
     public void Character(){}
 
@@ -38,14 +40,14 @@ public class Actor implements Serializable{
         }
         public void setCharacterType(String characterType){
             if (characterType == "sword") {
-                setAttack(10);
-                setDefence(0);
-            }else if (characterType == "sheild") {
-                setAttack(0);
+                setAttack(20);
                 setDefence(10);
+            }else if (characterType == "sheild") {
+                setAttack(10);
+                setDefence(20);
             } else{
-                setAttack(5);
-                setAttack(5);
+                setAttack(15);
+                setAttack(15);
             }
             this.characterType = characterType;
         }
