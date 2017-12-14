@@ -11,12 +11,6 @@ import modelLayer.Game;
  *
  * @author Colby
  * 
- * METHODS:
- *  New Game
- *  Save Game
- *  Open Game
- *  Determine win or loss
- * 
  */
 
 

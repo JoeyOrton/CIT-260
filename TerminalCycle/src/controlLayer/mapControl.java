@@ -5,10 +5,14 @@
  */
 package controlLayer;
 
+import java.util.ArrayList;
 import modelLayer.Actor;
 import modelLayer.Game;
 import modelLayer.Location;
 import modelLayer.Map;
+import modelLayer.Question;
+import modelLayer.Scene;
+import modelLayer.SceneType;
 
 /**
  *
@@ -27,8 +31,12 @@ public class MapControl {
         createLocations(numOfRows, numOfCol);
 //        curGame.setMap(thisMap);
 //        System.out.println(thisMap.getLocation());
-        
-        System.out.println("------da------");
+        createScenes();
+        createQuestions();
+        assignQuestionsToScenes(questions, scences);
+        assignItemsToScenes(items, scenes);
+        assignScenesToLocations(scenes, locations);
+        System.out.println("------End of MapControl------");
         
         
     }
@@ -46,18 +54,48 @@ public class MapControl {
                     Location.setVisit(false);
                     //Assign location to the row, and column in array
                     Location aLocation = new Location(numOfRows, numOfCol);
-                    break;
-                }
+                    
+                }   
                 break;
             }
-        Location[][] Location = null;
-        System.out.println("about to return Location!!!!");
-        System.out.println("here is Location: " + aLocation(0, 0));
-            return aLocation(0, 0); // return locations. idk
-                    }
+        System.out.println("---about to return Location---");
+        String[][] aLocation = null;
+        System.out.println("here is Location: " + aLocation[0][0]);
+            //aLocation[][]; // return locations
+        return null;
+}
             
             //ENDFOR    
             //RETURN locations
 
+    private static Scene[][] createScenes() {
+        System.out.println("-----createScenes called-----");
+        //build an array of scene objects
+        //Scene[] curScene;
+        //curScene = new Scene[25];
+        
+        ArrayList<Scene> scenes = new ArrayList<>();
+        scenes.add(SceneType.water_scene.ordinal(), new Scene("The floor is flooded"));
+        scenes.add(SceneType.trap_scene.ordinal(), new Scene("A large hole sits in your path"));
+        scenes.add(SceneType.trader_scene.ordinal(), new Scene("An old man sits nearby with a table of goods"));
+        scenes.add(SceneType.mushroom_scene.ordinal(), new Scene("The room glows gently from the fungi"));
+        scenes.add(SceneType.fire_scene.ordinal(), new Scene("The floor is literally lava"));
+        scenes.add(SceneType.enemy_scene.ordinal(), new Scene("A goblin blocks your path"));
+        
+        return null;
+    }
+    private static Question[][] createQuestions() {
+        System.out.println("-----createQuestions called-----");
+        return null;
+    }
+    private static void assignQuestionsToScenes(Question[] questions, Scene[] scenes) {
+        System.out.println("-----assignQuestionsToScenes called-----");
+    }
+    private static void assignItemsToScenes(inventoryControl[] items, Scene[] scenes) {
+        System.out.println("-----assignItemsToScenes called-----");
+    }
+    private static void assignScenesToLocations(Scene[] scenes, Location[] location) {
+        System.out.println("-----assignScencesToLocations called-----");
+    }
     
 }
