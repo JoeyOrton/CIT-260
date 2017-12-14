@@ -3,7 +3,7 @@ package modelLayer;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class Actor implements Serializable{
+public class Actor {
     private String name = "Null";
     private String characterType = "Null";
     public int playerHealth = 100;
@@ -63,54 +63,64 @@ public class Actor implements Serializable{
         public void setCombatModifier(int combatModifier){
             this.combatModifier = combatModifier;
         }
+        public void setLocation(int a, int b) {
+            this.x = a;
+            this.y = b;
+        }
 
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 43 * hash + Objects.hashCode(this.name);
-        hash = 43 * hash + Objects.hashCode(this.characterType);
-        hash = 43 * hash + this.playerHealth;
-        hash = 43 * hash + this.playerPower;
-        hash = 43 * hash + this.defence;
-        hash = 43 * hash + this.combatModifier;
-        return hash;
-    }
-
-    @Override
-    public String toString() {
-        return "Character{" + "name=" + name + ", characterType=" + characterType + ", health=" + playerHealth + ", attack=" + playerPower + ", defence=" + defence + ", combatModifier=" + combatModifier + '}';
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Actor other = (Actor) obj;
-        if (this.playerHealth != other.playerHealth) {
-            return false;
-        }
-        if (this.playerPower != other.playerPower) {
-            return false;
-        }
-        if (this.defence != other.defence) {
-            return false;
-        }
-        if (this.combatModifier != other.combatModifier) {
-            return false;
-        }
-        if (!Objects.equals(this.name, other.name)) {
-            return false;
-        }
-        if (!Objects.equals(this.characterType, other.characterType)) {
-            return false;
-        }
-        return true;
-    }
+        
+        
+        
+        
+        
+//        
+//    @Override
+//    public int hashCode() {
+//        int hash = 7;
+//        hash = 43 * hash + Objects.hashCode(this.name);
+//        hash = 43 * hash + Objects.hashCode(this.characterType);
+//        hash = 43 * hash + this.playerHealth;
+//        hash = 43 * hash + this.playerPower;
+//        hash = 43 * hash + this.defence;
+//        hash = 43 * hash + this.combatModifier;
+//        return hash;
+//    }
+//
+//    @Override
+//    public String toString() {
+//        return "Character{" + "name=" + name + ", characterType=" + characterType + ", health=" + playerHealth + ", attack=" + playerPower + ", defence=" + defence + ", combatModifier=" + combatModifier + '}';
+//    }
+//
+//    @Override
+//    public boolean equals(Object obj) {
+//        if (this == obj) {
+//            return true;
+//        }
+//        if (obj == null) {
+//            return false;
+//        }
+//        if (getClass() != obj.getClass()) {
+//            return false;
+//        }
+//        final Actor other = (Actor) obj;
+//        if (this.playerHealth != other.playerHealth) {
+//            return false;
+//        }
+//        if (this.playerPower != other.playerPower) {
+//            return false;
+//        }
+//        if (this.defence != other.defence) {
+//            return false;
+//        }
+//        if (this.combatModifier != other.combatModifier) {
+//            return false;
+//        }
+//        if (!Objects.equals(this.name, other.name)) {
+//            return false;
+//        }
+//        if (!Objects.equals(this.characterType, other.characterType)) {
+//            return false;
+//        }
+//        return true;
+//    }
 }

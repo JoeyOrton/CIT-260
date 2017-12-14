@@ -6,15 +6,33 @@ import java.util.Objects;
 
 public class Map implements Serializable{
     
-    private Location[][] gameLocations = new Location[5][5];
+    
     private String description = "Null";
     String room00 = "This a room Name";
-        String roomDesc00 = "Le Description";
+        String roomDesc00 = "Description";
         int roomX00 = 0;
         int roomY00 = 0;
-    public void Map(){
+        int mySpot = 0;
+    public void makeMap(){
+    }
         
-        gameLocations[0][0].makeRoom(room00 , roomDesc00, roomX00, roomY00);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+//        for (;mySpot<gameLocations.length;mySpot++) {
+//            if (gameLocations[roomX00][roomY00] == null) {
+//            gameLocations[roomX00][roomY00] = ;
+//            break;                       // once we insert a, stop looping
+//        }
+//
+//        }
+//        gameLocations[0][0].makeRoom(room00 , roomDesc00, roomX00, roomY00);
 //        gameLocations[1][0].makeRoom(room10 , roomDesc10);
 //        gameLocations[2][0].makeRoom(room20 , roomDesc20);
 //        gameLocations[3][0].makeRoom(room30 , roomDesc50);
@@ -38,33 +56,20 @@ public class Map implements Serializable{
 //        gameLocations[0][0].makeRoom(room33 , roomDesc33);
 //        gameLocations[0][0].makeRoom(room43 , roomDesc43);
 //        gameLocations[0][0].makeRoom(room53 , roomDesc53);
-    }
+  
         public String getDescription(){
             return description;
         }
-//        public void setDescription(String description){
-//            this.description = description;
+////        public void setDescription(String description){
+////            this.description = description;
+////        }
+//    
+//        public String getLocation(){
+//            return gameLocations[roomX00][roomY00];
 //        }
-    
-        public Location getLocation(){
-            return gameLocations[roomX00][roomY00];
-        }
-        public Location setLocation(int x, int y) {
-            return gameLocations[x][y];
-        }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+//        public Location setLocation(int x, int y) {
+//            return gameLocations[x][y];
+//        }
         
 //        @Override
 //    public int hashCode() {
